@@ -1,10 +1,9 @@
-package dev.cameron.acp_demo.service;
-
+package dev.cameron.acpdemo.service;
 
 import com.azure.core.util.BinaryData;
 import com.nimbusds.jose.shaded.gson.Gson;
-import dev.cameron.acp_demo.dto.AcpStudentDTO;
-import dev.cameron.acp_demo.model.AcpStudent;
+import dev.cameron.acpdemo.dto.AcpStudentDTO;
+import dev.cameron.acpdemo.model.AcpStudent;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 

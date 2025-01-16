@@ -1,4 +1,4 @@
-package dev.cameron.acp_demo.dto;
+package dev.cameron.acpdemo.dto;
 
 import lombok.Data;
 

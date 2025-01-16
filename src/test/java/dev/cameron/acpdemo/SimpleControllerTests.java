@@ -1,8 +1,8 @@
-package dev.cameron.acp_demo;
+package dev.cameron.acpdemo;
 
-import dev.cameron.acp_demo.controller.SimpleController;
-import dev.cameron.acp_demo.model.AcpStudent;
-import dev.cameron.acp_demo.service.StudentService;
+import dev.cameron.acpdemo.controller.SimpleController;
+import dev.cameron.acpdemo.model.AcpStudent;
+import dev.cameron.acpdemo.service.StudentService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

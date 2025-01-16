@@ -1,4 +1,4 @@
-package dev.cameron.acp_demo.model;
+package dev.cameron.acpdemo.model;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package dev.cameron.acp_demo;
+package dev.cameron.acpdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

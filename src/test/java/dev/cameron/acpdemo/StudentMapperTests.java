@@ -1,8 +1,8 @@
-package dev.cameron.acp_demo;
+package dev.cameron.acpdemo;
 
-import dev.cameron.acp_demo.dto.AcpStudentDTO;
-import dev.cameron.acp_demo.mapper.StudentMapper;
-import dev.cameron.acp_demo.model.AcpStudent;
+import dev.cameron.acpdemo.dto.AcpStudentDTO;
+import dev.cameron.acpdemo.mapper.StudentMapper;
+import dev.cameron.acpdemo.model.AcpStudent;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

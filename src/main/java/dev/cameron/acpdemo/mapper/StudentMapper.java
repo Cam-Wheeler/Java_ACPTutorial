@@ -1,7 +1,10 @@
-package dev.cameron.acp_demo.mapper;
+package dev.cameron.acpdemo.mapper;
 
-import dev.cameron.acp_demo.dto.AcpStudentDTO;
-import dev.cameron.acp_demo.model.AcpStudent;
+// Local Imports
+import dev.cameron.acpdemo.dto.AcpStudentDTO;
+import dev.cameron.acpdemo.model.AcpStudent;
+
+// Java Imports
 import org.springframework.stereotype.Component;
 
 @Component

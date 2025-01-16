@@ -1,7 +1,6 @@
-package dev.cameron.acp_demo;
+package dev.cameron.acpdemo;
 
 // Local
-import dev.cameron.acp_demo.controller.SimpleController;
 
 // Java
 import org.junit.jupiter.api.Test;
