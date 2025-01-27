@@ -7,6 +7,7 @@ import dev.cameron.acpdemo.model.AcpStudent;
 import dev.cameron.acpdemo.mapper.StudentMapper;
 
 // Java Imports
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -49,8 +50,8 @@ public class SimpleController {
     Post Request with JSON in body.
     Method also submits BLOB object to Azure BLOB Storage through student service.
      */
-    @PostMapping("/createACPStudent")
-    public AcpStudentDTO createACPStudent(@RequestBody AcpStudent acpStudent) {
+    @PostMapping("/students")
+    public AcpStudentDTO createACPStudent(@RequestBody AcpStudent acpStudent) throws ResponseStatusException {
         if (!this.studentService.validateStudent(acpStudent)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid student information.");
         }
@@ -59,5 +60,18 @@ public class SimpleController {
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Student was not created.");
         }
+    }
+
+    /*
+    Deletes a student if they are in the registry.
+    @returns true if student is found, 404 if student is not present.
+     */
+    @DeleteMapping("students/{id}")
+    public boolean deleteStudent(@PathVariable String id) {
+        boolean success = this.studentService.deleteStudent(id);
+        if (!success) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Student was not deleted.");
+        }
+        return true;
     }
 }

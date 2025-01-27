@@ -4,8 +4,8 @@ import com.azure.core.util.BinaryData;
 import com.nimbusds.jose.shaded.gson.Gson;
 import dev.cameron.acpdemo.dto.AcpStudentDTO;
 import dev.cameron.acpdemo.model.AcpStudent;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 
 @Service
 public class StudentService {
@@ -25,7 +25,7 @@ public class StudentService {
                 break;
             }
             // Check the names are not an empty string.
-            if (ObjectUtils.isEmpty(student.getFirstName()) || ObjectUtils.isEmpty(student.getLastName())) {
+            if ((student.getFirstName().isBlank()) || student.getLastName().isBlank()) {
                 break;
             }
             // Enforce length and starting character (it must be lower case to be valid).
@@ -77,5 +77,10 @@ public class StudentService {
             return false;
         }
         return true;
+    }
+
+    // Deletes the blob if present.
+    public boolean deleteStudent(String studentId) {
+        return this.blobService.getBlobClient(studentId).deleteIfExists();
     }
 }

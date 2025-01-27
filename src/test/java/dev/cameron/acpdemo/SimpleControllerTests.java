@@ -65,7 +65,7 @@ public class SimpleControllerTests {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:" + this.port + "/createACPStudent",
+        ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:" + this.port + "/students",
                 new HttpEntity<>(invalidStudent, headers), String.class);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);

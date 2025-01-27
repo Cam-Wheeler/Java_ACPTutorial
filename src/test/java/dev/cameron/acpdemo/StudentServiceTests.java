@@ -27,50 +27,42 @@ public class StudentServiceTests {
     @MockitoBean
     private BlobService mockedBlobService;
 
+    // Helper method for testing.
+    private AcpStudent createStudent(String id, String firstName, String lastName) {
+        AcpStudent student = new AcpStudent();
+        student.setId(id);
+        student.setFirstName(firstName);
+        student.setLastName(lastName);
+        return student;
+    }
+
     @Test
     void testValidateStudentCorrect() {
-        AcpStudent student = new AcpStudent();
-        student.setId("s1234567");
-        student.setFirstName("Cameron");
-        student.setLastName("Wheeler");
+        AcpStudent student = createStudent("s1234567", "Cameron", "Wheeler");
         assertTrue(studentService.validateStudent(student));
     }
 
     @Test
     void testValidateStudentIncorrectIdLength() {
-        AcpStudent student = new AcpStudent();
-        student.setId("s0000");
-        student.setFirstName("Cameron");
-        student.setLastName("Wheeler");
+        AcpStudent student = createStudent("s0000", "Cameron", "Wheeler");
         assertFalse(studentService.validateStudent(student));
     }
 
     @Test
     void testValidateStudentIncorrectIdNumbers() {
-        AcpStudent student = new AcpStudent();
-        student.setId("s123v567");
-        student.setFirstName("Cameron");
-        student.setLastName("Wheeler");
+        AcpStudent student = createStudent("s123v567", "Cameron", "Wheeler");
         assertFalse(studentService.validateStudent(student));
     }
 
-    // Test that null raises error, should also test second but just an example.
     @Test
     void testValidateStudentNullFirst() {
-        AcpStudent student = new AcpStudent();
-        student.setId("s1234567");
-        student.setFirstName(null);
-        student.setLastName("Wheeler");
+        AcpStudent student = createStudent("s1234567", null, "Wheeler");
         assertFalse(studentService.validateStudent(student));
     }
 
-    // Test that the first name is not empty, should also test second but just an example.
     @Test
     void testValidateStudentEmptyFirst() {
-        AcpStudent student = new AcpStudent();
-        student.setId("s1234567");
-        student.setFirstName("");
-        student.setLastName("Wheeler");
+        AcpStudent student = createStudent("s1234567", "", "Wheeler");
         assertFalse(studentService.validateStudent(student));
     }
 
