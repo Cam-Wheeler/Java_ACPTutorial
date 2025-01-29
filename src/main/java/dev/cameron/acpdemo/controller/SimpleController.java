@@ -7,7 +7,6 @@ import dev.cameron.acpdemo.model.AcpStudent;
 import dev.cameron.acpdemo.mapper.StudentMapper;
 
 // Java Imports
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
